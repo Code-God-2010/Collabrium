@@ -57,7 +57,7 @@ collabrium/
 ├── scripts/           # Datenbank-Seeding & Utilities
 ├── tests/             # Unit- & Integrationstests
 └── docs/              # Dokumentation & Architektur
-ˋˋˋ
+```
 ---
 
 ## ⚙️ Installation & Setup
@@ -79,7 +79,7 @@ cd ../backend && npm install
 
 # Entwicklungsumgebung starten
 npm run dev
-
+```
 ---
 
 ## 🔐 Sicherheit
