@@ -57,7 +57,7 @@ collabrium/
 ├── scripts/           # Datenbank-Seeding & Utilities
 ├── tests/             # Unit- & Integrationstests
 └── docs/              # Dokumentation & Architektur
-
+ˋˋˋ
 ---
 
 ## ⚙️ Installation & Setup
