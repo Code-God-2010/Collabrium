@@ -10,12 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
   },
-  "_moduleAliases": {
-    "@shared": "../shared",
-    "@controllers": "./controllers",
-    "@routes": "./routes",
-    "@models": "./models"
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
