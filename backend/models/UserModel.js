@@ -24,10 +24,12 @@ const userSchema = new mongoose.Schema(
       minlength: 6,
       select: false,
     },
+    project: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Projekt",
+    }
   },
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
-
-export default User;
+export default mongoose.model("User", userSchema);
