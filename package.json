@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "module-alias": "^2.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0"
   }
 }
