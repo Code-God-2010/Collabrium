@@ -9,10 +9,12 @@ const projectSchema = new mongoose.Schema(
         description: {
             type: String
         },
-        asignedTo: {
+        asignedTo: [
+            {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-        },
+            }
+        ],
     },
     { timestamps: true }
 );
