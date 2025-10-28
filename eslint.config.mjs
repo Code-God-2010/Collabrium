@@ -5,7 +5,7 @@ import pluginJs from "@eslint/js";
 export default [
     {
         languageOptions: {
-            globals: globals.browser,
+            globals: globals.node,
         },
     },
     pluginJs.configs.recommended,
@@ -16,4 +16,5 @@ export default [
             semi: ["error", "always"],
         },
     },
+    
 ];
