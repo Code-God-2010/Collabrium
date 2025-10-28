@@ -9,7 +9,7 @@ router.post('/', addUser);
 router.get('/:id', getUserById);
 
 // update a user by id
-router.put('/:id', updateUser);
+router.patch('/:id', updateUser);
 
 // get all users
 router.get('/', getUsers);

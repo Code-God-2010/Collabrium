@@ -1,4 +1,4 @@
-import { addProject, editProject, deleteProject, getCollaborators, addCollaborator, removeCollaborator } from '../controllers/projectController';
+import { addProject, editProject, deleteProject, getCollaborators, addCollaborator, removeCollaborator } from '../controllers/projectController.js';
 import express from 'express';
 const router = express.Router();
 
