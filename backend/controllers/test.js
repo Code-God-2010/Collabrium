@@ -1,11 +1,11 @@
-import User from '../models/UserModel.js';
-import mongoose, { mongo } from 'mongoose';
-import dotenv from 'dotenv';
-dotenv.config({ path: '../.env' });
+import User from "../models/UserModel.js";
+import mongoose, { mongo } from "mongoose";
+import dotenv from "dotenv";
+dotenv.config({ path: "../.env" });
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
 
 export async function testAddUser() {
     try {
@@ -27,7 +27,7 @@ export async function testAddUser() {
 
 export async function getUsers() {
     try {
-        const users = await User.find().select('-password');
+        const users = await User.find().select("-password");
         console.log("Users retrieved:", users);
         mongoose.connection.close();
     } catch(error) {

@@ -1,9 +1,9 @@
-import Project from '../models/ProjectModel.js';
+import Project from "../models/ProjectModel.js";
 
 export async function addProject(req, res) {
     try {
         const { title, description, userId } = req.body;
-        const newProject = new Project({title, description, userId})
+        const newProject = new Project({title, description, userId});
         await newProject.save();
         res.status(200).json(newProject);
     } catch(error) {
@@ -13,12 +13,12 @@ export async function addProject(req, res) {
 
 export async function editProject(req, res) {
     try {
-    const project = await Project.findById(req.params.id);
-    const { title, description } = req.body;
-    project.title = title || project.title;
-    project.description = description || project.description;
-    await project.save()
-    res.status(200).json(project);
+        const project = await Project.findById(req.params.id);
+        const { title, description } = req.body;
+        project.title = title || project.title;
+        project.description = description || project.description;
+        await project.save();
+        res.status(200).json(project);
     } catch(error) {
         res.status(400).json({ message: error.message });
     }
@@ -26,8 +26,8 @@ export async function editProject(req, res) {
 
 export async function deleteProject(req, res) {
     try {
-    const project = await Project.findByIdAndDelete(req.params.id);
-    res.status(200).json(project);
+        const project = await Project.findByIdAndDelete(req.params.id);
+        res.status(200).json(project);
     } catch(error) {
         res.status(400).json({ message: error.message });
     }

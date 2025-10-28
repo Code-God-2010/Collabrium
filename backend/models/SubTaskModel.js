@@ -13,6 +13,6 @@ const subTaskSchema = new mongoose.Schema(
         }
     },
     { timestamps: true }
-)
+);
 
 export default mongoose.model("SubTask", subTaskSchema);

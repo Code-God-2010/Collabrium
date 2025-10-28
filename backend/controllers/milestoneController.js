@@ -2,8 +2,8 @@ import Milestone from "../models/milestoneModel.js";
 
 export async function getMilestone(req, res) {
     try {
-        const milestone = await Milestone.findById(req.params.milestoneId)
-        res.status(200).json(milestone)
+        const milestone = await Milestone.findById(req.params.milestoneId);
+        res.status(200).json(milestone);
     } catch(error) {
         res.status(400).json({ message: error.message });
     }
@@ -46,7 +46,7 @@ export async function editMilestone(req, res) {
                 }
             });
         }
-        await milestone.save()
+        await milestone.save();
         res.status(200).json(milestone);
     } catch(error) {
         res.status(400).json({ message: error.message });
@@ -55,8 +55,8 @@ export async function editMilestone(req, res) {
 
 export async function deleteMilestone(req, res) {
     try {
-    const milestone = await Milestone.findByIdAndDelete(req.params.projectId);
-    res.status(200).json(milestone);
+        const milestone = await Milestone.findByIdAndDelete(req.params.projectId);
+        res.status(200).json(milestone);
     } catch(error) {
         res.status(400).json({ message: error.message });
     }
@@ -95,7 +95,7 @@ export async function removeAsignedTo(req, res) {
             { new: true }
         );
 
-        res.status(200).json(milestoneId);
+        res.status(200).json(updatedMilestone);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
