@@ -16,7 +16,7 @@ export async function getUsers(req, res) {
         const users = await User.find().select('-password');
         res.status(200).json(users);
     } catch(error) {
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 };
 
