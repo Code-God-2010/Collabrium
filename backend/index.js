@@ -1,9 +1,10 @@
-import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import express from 'express';
 import mongoose from 'mongoose';
 import userRoutes from './routes/userRoutes.js';
-import projectRoutes from './routes/projectRoutes.js'
+import projectRoutes from './routes/projectRoutes.js';
+import milestoneRoutes from './routes/milestoneRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api', userRoutes);
 app.use('/api', projectRoutes);
+app.use('/api', milestoneRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
