@@ -4,6 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
+import subTaskRoutes from "./routes/subTaskRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import milestoneRoutes from "./routes/milestoneRoutes.js";
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api", userRoutes);
 app.use("/api", taskRoutes);
 app.use("/api", projectRoutes);
+app.use("/api", subTaskRoutes);
 app.use("/api", milestoneRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
