@@ -9,7 +9,7 @@ const projectSchema = new mongoose.Schema(
         description: {
             type: String
         },
-        asignedTo: [
+        assignedTo: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "User"

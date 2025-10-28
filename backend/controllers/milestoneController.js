@@ -35,7 +35,7 @@ export async function editMilestone(req, res) {
         if (newUsers) {
             newUsers.forEach(user => {
                 if (! milestone.assignedTo.includes(user)) {
-                    milestone.asignedTo.push(user);
+                    milestone.assignedTo.push(user);
                 }
             });
         }
@@ -62,17 +62,17 @@ export async function deleteMilestone(req, res) {
     }
 }
 
-export async function getAsignedTo(req, res) {
+export async function getassignedTo(req, res) {
     try {
         const milestone = await Milestone.findById(req.params.projectId);
         if (!milestone) return res.status(404).json({ message: "Projekt nicht gefunden" });
-        res.status(200).json({ asignedTo: milestone.assignedTo });
+        res.status(200).json({ assignedTo: milestone.assignedTo });
     } catch(error) {
         res.status(400).json({ message: error.message });
     }
 }
 
-export async function addAsignedTo(req, res) {
+export async function addassignedTo(req, res) {
     try {
         const updatedMilestone = await Milestone.findByIdAndUpdate(
             req.params.projectId,
@@ -85,7 +85,7 @@ export async function addAsignedTo(req, res) {
     }
 }
 
-export async function removeAsignedTo(req, res) {
+export async function removeassignedTo(req, res) {
     try {
         const { milestoneId, userId } = req.params;
 

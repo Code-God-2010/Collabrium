@@ -1,5 +1,5 @@
 import express from "express";
-import { addMilestone, editMilestone, deleteMilestone, getAsignedTo, addAsignedTo, removeAsignedTo, getMilestone } from "../controllers/milestoneController.js";
+import { addMilestone, editMilestone, deleteMilestone, getassignedTo, addassignedTo, removeassignedTo, getMilestone } from "../controllers/milestoneController.js";
 const router = new express.Router();
 
 // add milestone with project id
@@ -14,13 +14,13 @@ router.patch("/milestone/:milestoneId", editMilestone);
 // get milestone with id
 router.get("/milestone/:milestoneId", getMilestone);
 
-// asign user to milestone with milestone id and user id
-router.patch("/milestone/:milestoneId/user/:userId", addAsignedTo);
+// assign user to milestone with milestone id and user id
+router.patch("/milestone/:milestoneId/user/:userId", addassignedTo);
 
-// remove asigned user with milestone id and user id
-router.delete("/milestone/:milestoneId/user/:userId", removeAsignedTo);
+// remove assigned user with milestone id and user id
+router.delete("/milestone/:milestoneId/user/:userId", removeassignedTo);
 
-// get asigned users with project id
-router.get("/milestone/:milestoneId", getAsignedTo);
+// get assigned users with project id
+router.get("/milestone/:milestoneId", getassignedTo);
 
 export default router;

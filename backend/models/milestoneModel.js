@@ -14,7 +14,7 @@ const milestoneSchema = new mongoose.Schema(
             enum: ["to do", "in progress", "done"],
             default: "to do"
         },
-        asignedTo:[ 
+        assignedTo:[ 
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "User"

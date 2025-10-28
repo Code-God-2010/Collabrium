@@ -1,0 +1,5 @@
+- Finish Backend routes and controllers
+- IMPLEMENT FRONTEND
+- Use Docker
+- Authentification (oAuth)
+- Error managment
