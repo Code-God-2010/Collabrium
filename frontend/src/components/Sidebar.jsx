@@ -31,7 +31,7 @@ export default function Sidebar() {
                     </button>
                 </div>
                 <nav className="flex flex-col justify-between py-5 text-lg h-full">
-                    <Link to={collabriumLink.path} className="flex flex-row gap-3 items-center transition-all py-2 hover:bg-blue-800 pl-5"><div className="w-5 flex-shrink-0">{collabriumLink.icon}</div><span className={"overflow-hidden"}>{!collapsed && collabriumLink.label}</span></Link>
+                    <Link to={collabriumLink.path} className="flex flex-row gap-3 items-center transition-all py-2 hover:bg-blue-800 pl-5"><div className="w-5 shrink-0">{collabriumLink.icon}</div><span className={"overflow-hidden"}>{!collapsed && collabriumLink.label}</span></Link>
                     <div className="flex flex-col">
                         {links.map(link => {
                             const isActive = location.pathname === link.path;
