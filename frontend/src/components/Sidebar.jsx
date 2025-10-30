@@ -10,7 +10,7 @@ export default function Sidebar() {
     const settingsLink = { path: "/settings", label: "Einstellungen", icon: <Settings size={20} /> };
     const links = [
         { path: "/dashboard", label: "Dashboard", icon: <LayoutDashboard size={20} /> },
-        { path: "/projects", label: "Projekte", icon: <FolderKanban size={20} /> },
+        { path: "/project", label: "Projekt", icon: <FolderKanban size={20} /> },
         { path: "/goals", label: "Ziele", icon: <Target size={20} /> },
         { path: "/team", label: "Team", icon: <Users size={20} /> },
     ];
