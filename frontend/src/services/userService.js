@@ -20,6 +20,6 @@ export async function getTeam(projectId) {
 
 export async function getUserByName(name) {
     const res = await getUsers();
-    const user = res.data.filter(u => u.name == name);
+    const user = res.data.filter(u => u.name == name)[0];
     return user; 
 }

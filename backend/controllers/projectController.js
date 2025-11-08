@@ -2,8 +2,12 @@ import Project from "../models/projectModel.js";
 
 export async function addProject(req, res) {
     try {
-        const { title, description, userId } = req.body;
-        const newProject = new Project({title, description, userId});
+        const { title, description } = req.body;
+        const userId = req.params.userId;
+        const newProject = new Project({
+            title: title, 
+            description: description, 
+            creator: userId});
         await newProject.save();
         res.status(200).json(newProject);
     } catch(error) {
@@ -13,7 +17,7 @@ export async function addProject(req, res) {
 
 export async function editProject(req, res) {
     try {
-        const project = await Project.findById(req.params.id);
+        const project = await Project.findById(req.params.projectId);
         const { title, description } = req.body;
         project.title = title || project.title;
         project.description = description || project.description;
@@ -26,7 +30,7 @@ export async function editProject(req, res) {
 
 export async function deleteProject(req, res) {
     try {
-        const project = await Project.findByIdAndDelete(req.params.id);
+        const project = await Project.findByIdAndDelete(req.params.projectId);
         res.status(200).json(project);
     } catch(error) {
         res.status(400).json({ message: error.message });
@@ -35,7 +39,7 @@ export async function deleteProject(req, res) {
 
 export async function getCollaborators(req, res) {
     try {
-        const project = await Project.findById(req.params.id);
+        const project = await Project.findById(req.params.projectId);
         if (!project) return res.status(404).json({ message: "Projekt nicht gefunden" });
         res.status(200).json({ collaboratorsIds: project.assignedTo });
     } catch(error) {
@@ -58,7 +62,8 @@ export async function addCollaborator(req, res) {
 
 export async function removeCollaborator(req, res) {
     try {
-        const { projectId, userId } = req.body;
+        const projectId = req.params.projectId;
+        const userId = req.params.userId;
 
         const updatedProject = await Project.findByIdAndUpdate(
             projectId,

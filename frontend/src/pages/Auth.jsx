@@ -1,16 +1,19 @@
 import AuthLayout from "../layouts/authLayout.jsx";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { getUserByName } from "../services/userService.js";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../features/user/userSlice.js";
+import { useState } from "react";
 
 export default function Auth() {
     const [input, setInput] = useState("");
-    const [user, setUser] = useState(null);
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
     const handleSubmit = async () => {
-        const fetchedUser = await getUserByName(input); // input enthält den eingegebenen Namen
-        localStorage.setItem("user", JSON.stringify(fetchedUser)); // als JSON speichern
-        setUser(fetchedUser);
+        const fetchedUser = await getUserByName(input);
+        console.log(fetchedUser);
+        dispatch(login(fetchedUser));
     };
 
     return (

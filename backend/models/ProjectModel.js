@@ -15,6 +15,12 @@ const projectSchema = new mongoose.Schema(
                 ref: "User"
             }
         ],
+        creator: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: [true, "Please add a creator"],
+            unique: true,
+        }
     },
     { timestamps: true }
 );

@@ -3,22 +3,22 @@ import express from "express";
 const router = express.Router();
 
 // add a new project
-router.post("/project/", addProject);
+router.post("/collaborator/:userId", addProject);
 
 // edit description and title of a project
-router.put("/project/:id", editProject);
+router.put("/project/:projectId", editProject);
 
 // delete Project by id
-router.delete("/project/:id", deleteProject);
+router.delete("/project/:projectId", deleteProject);
 
 // get collaborrators by project id
-router.get("/project/collaborator/:id", getCollaborators);
+router.get("/collaborator/:projectId", getCollaborators);
 
 // add a collaborator to project by id
-router.post("/project/collaborator/:id", addCollaborator);
+router.post("/project/:projectId/collaborator/:userId", addCollaborator);
 
 // remove a collaborator from a project
-router.delete("project/collaborator/", removeCollaborator);
+router.delete("/project/:projectId/collaborator/:userId", removeCollaborator);
 
 export default router;
 

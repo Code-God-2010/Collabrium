@@ -6,7 +6,7 @@ import "../styles/index.css";
 export default function Sidebar() {
     const [collapsed, setCollapsed] = useState(false);
     const location = useLocation();
-    const collabriumLink = { path: "/home", label: "Collabrium", icon: <BrainCircuit size={20} /> };
+    const collabriumLink = { path: "/dashboard", label: "Collabrium", icon: <BrainCircuit size={20} /> };
     const settingsLink = { path: "/settings", label: "Einstellungen", icon: <Settings size={20} /> };
     const links = [
         { path: "/dashboard", label: "Dashboard", icon: <LayoutDashboard size={20} /> },
