@@ -6,7 +6,7 @@ export default function ProjectPage() {
     const project = useSelector((state) => state.project);
 
     return(
-        <MainLayout>
+        <MainLayout title={"Projekt"}>
             {project.title != "" ? <p>Projekt ausgewält</p> : <ChooseProject />}
         </MainLayout>
     );

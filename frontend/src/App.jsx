@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProjectPage from "./pages/Project";
+import InboxPage from "./pages/Inbox";
 import HomePage from "./pages/Home";
 import TeamPage from "./pages/Team";
 import Auth from "./pages/Auth";
-import ProjectPage from "./pages/Project";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/team" element={<TeamPage />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/project" element={<ProjectPage />} />
+                <Route path="/inbox" element={<InboxPage />} />
             </Routes>
         </BrowserRouter>
     );

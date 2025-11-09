@@ -11,7 +11,7 @@ export default function ChooseProject() {
 
     if (!createProject && !joinProject){
         return(
-            <div>
+            <div className={"container-component"}>
                 <h1>Keinem Project Beigetreten</h1>
                 <button onClick={() => setCreateProject(true)}>Projekt Erstellen</button>
                 <button onClick={() => setJoinProject(true)}>Projekt Beitreten</button>
@@ -20,7 +20,7 @@ export default function ChooseProject() {
     }
     
     return(
-        <div>
+        <div className={"container-component"}>
             {createProject && <CreateProject user={user} />}
         </div>
     );

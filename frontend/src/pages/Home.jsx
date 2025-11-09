@@ -4,7 +4,7 @@ export default function HomePage() {
     
 
     return(
-        <MainLayout>
+        <MainLayout title={"Dashboard"}>
 
         </MainLayout>
     );

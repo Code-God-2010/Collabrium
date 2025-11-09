@@ -22,7 +22,7 @@ export default function UserSearch() {
     }, [search, users]);
 
     return (
-        <div className={"border-2 border-blue-600 rounded-lg"}>
+        <div className={"container-component"}>
             <input type="text" value={search} onChange={e => setSearch(e.target.value)} className={"border-b focus:outline-0"} />
             <ul>
                 {filteredUsers.map(user => (

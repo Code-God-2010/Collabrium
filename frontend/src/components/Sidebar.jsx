@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Users, LayoutDashboard, FolderKanban, Target, Settings, BrainCircuit, PanelsTopLeft, CloudLightning } from "lucide-react";
+import { Inbox, Home, Users, LayoutDashboard, FolderKanban, Target, Settings, BrainCircuit, PanelsTopLeft, CloudLightning } from "lucide-react";
 import { useState } from "react";
 import "../styles/index.css";
 
@@ -13,6 +13,7 @@ export default function Sidebar() {
         { path: "/project", label: "Projekt", icon: <FolderKanban size={20} /> },
         { path: "/goals", label: "Ziele", icon: <Target size={20} /> },
         { path: "/team", label: "Team", icon: <Users size={20} /> },
+        { path: "/inbox", label: "Inbox", icon: <Inbox size={20} /> },
     ];
     return(
         <aside

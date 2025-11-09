@@ -5,7 +5,7 @@ import Team from "../components/Team";
 export default function HomePage() {
 
     return(
-        <MainLayout>
+        <MainLayout title={"Team"}>
             <UserSearch />
             <Team />
         </MainLayout>
