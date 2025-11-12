@@ -1,4 +1,4 @@
-import JoinRequest from "../models/joinRequest";
+import JoinRequest from "../models/joinRequest.js";
 
 export async function addJoinRequest(req, res) {
     try {
@@ -16,19 +16,14 @@ export async function addJoinRequest(req, res) {
     }
 }
 
-export async function getReceivedJoinRequest(req, res) {
+export async function getJoinRequests(req, res) {
     try {
-        const receivedJoinRequests = JoinRequest.find({receiver: req.params.userId});
-        res.status(200).json(receivedJoinRequests);
-    } catch(error) {
-        res.status(400).json({ message: error.message });
-    }
-}
-
-export async function getSentJoinRequests(req, res) {
-    try {
-        const sentJoinRequests = JoinRequest.find({sender: req.params.userId});
-        res.status(200).json(sentJoinRequests);
+        const receivedJoinRequests = await JoinRequest.find({receiver: req.params.userId});
+        const sentJoinRequests = await JoinRequest.find({sender: req.params.userId});
+        res.status(200).json({
+            receivedJoinRequests: receivedJoinRequests,
+            sentJoinRequests: sentJoinRequests,
+        });
     } catch(error) {
         res.status(400).json({ message: error.message });
     }
@@ -62,7 +57,7 @@ export async function markAsRead(req, res) {
 
 export async function deleteJoinRequest(req, res) {
     try {
-        const deletedJoinRequest = JoinRequest.findByIdAndDelete(req.params.requestId);
+        const deletedJoinRequest = await JoinRequest.findByIdAndDelete(req.params.requestId);
         res.status(200).json(deletedJoinRequest);
     } catch(error) {
         res.status(400).json({ message: error.message });

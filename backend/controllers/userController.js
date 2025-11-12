@@ -13,7 +13,7 @@ export async function addUser(req, res) {
 
 export async function getUsers(req, res) {
     try {
-        const users = await User.find().select("-password");
+        const users = await User.find().select("name email id").lean();
         res.status(200).json(users);
     } catch(error) {
         res.status(400).json({ message: error.message });
@@ -22,7 +22,7 @@ export async function getUsers(req, res) {
 
 export async function getUserById(req, res) {
     try {
-        const user = await User.findById(req.params.id).select("-password");
+        const user = await User.findById(req.params.id).select("name email id");
         if(!user) {
             return res.status(404).json({ message: "User not found" });
         }
@@ -34,7 +34,7 @@ export async function getUserById(req, res) {
 
 export async function getUserByEmail(req, res) {
     try {
-        const user = await User.findOne({ email: req.params.email }).select("-password");
+        const user = await User.findOne({ email: req.params.email }).select("name email id");
         if(!user) {
             return res.status(404).json({ message: "User not found" });
         }
@@ -94,7 +94,7 @@ export async function deleteUser(req, res) {
 
 export async function getUserIdByEmail(req, res) {
     try {
-        const user = await User.findOne({ email: req.params.email });
+        const user = await User.findOne({ email: req.params.email }).select("id");
         if(!user) {
             return res.status(404).json({ message: "User not found" });
         }

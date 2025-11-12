@@ -7,6 +7,7 @@ import taskRoutes from "./routes/taskRoutes.js";
 import subTaskRoutes from "./routes/subTaskRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import milestoneRoutes from "./routes/milestoneRoutes.js";
+import joinRequestRoutes from "./routes/joinRequestRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,7 @@ app.use("/task/api", taskRoutes);
 app.use("/project/api", projectRoutes);
 app.use("/subtask/api", subTaskRoutes);
 app.use("/milestone/api", milestoneRoutes);
+app.use("/joinrequest/api", joinRequestRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))

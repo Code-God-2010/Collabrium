@@ -23,3 +23,8 @@ export async function getUserByName(name) {
     const user = res.data.filter(u => u.name == name)[0];
     return user; 
 }
+
+export async function getUserById(userId) {
+    const res = await api.get(`user/api/${userId}`);
+    return res.data || res;
+}

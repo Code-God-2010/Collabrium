@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SettingsPage from "./pages/Settings";
 import ProjectPage from "./pages/Project";
 import InboxPage from "./pages/Inbox";
 import HomePage from "./pages/Home";
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/project" element={<ProjectPage />} />
                 <Route path="/inbox" element={<InboxPage />} />
+                <Route path="/settings" element={<SettingsPage />} />
             </Routes>
         </BrowserRouter>
     );

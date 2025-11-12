@@ -22,9 +22,9 @@ export default function UserSearch() {
     }, [search, users]);
 
     return (
-        <div className={"container-component"}>
+        <div className={"container-component max-h-100 overflow-hidden"}>
             <input type="text" value={search} onChange={e => setSearch(e.target.value)} className={"border-b focus:outline-0"} />
-            <ul>
+            <ul className={""}>
                 {filteredUsers.map(user => (
                     <li key={user._id}>{user.name}</li>
                 ))}

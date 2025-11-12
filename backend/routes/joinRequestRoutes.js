@@ -1,12 +1,10 @@
 import express from "express";
-import { getReceivedJoinRequest, addJoinRequest, getSentJoinRequests, markAsReceived, markAsRead, deleteJoinRequest } from "../controllers/joinRequestController";
+import { getJoinRequests, addJoinRequest, markAsReceived, markAsRead, deleteJoinRequest } from "../controllers/joinRequestController.js";
 const router = new express.Router();
 
-router.get("/received/:userId", getReceivedJoinRequest);
+router.get("/user/:userId", getJoinRequests);
 
-router.get("/sent/:userId", getSentJoinRequests);
-
-router.post("/sender/:senderId/recceiver/:receiverId", addJoinRequest);
+router.post("/sender/:senderId/receiver/:receiverId", addJoinRequest);
 
 router.put("/read/request/:requestId", markAsRead);
 
